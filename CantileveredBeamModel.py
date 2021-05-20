@@ -7,6 +7,10 @@ from math import log10
 import sys
 import time
 
+# imports numpy.linalg as npla
+# precision could be less
+# average runtime over multiple runs
+
 # Consider a horizontal cantilevered beam
 # that is clamped at one end but free along the remainder of its length. A discrete model of the
 # forces on the beam yields a system of linear equations Ax = b, where the n × n matrix A has the
@@ -37,6 +41,7 @@ class BeamMatrix:
         self.load = load
         # print(load.shape)
         
+        # toeplitz matrix
         arr = np.zeros((n, n), dtype='int64')
         arr[0][0] = 9
         arr[1][1] = 5
